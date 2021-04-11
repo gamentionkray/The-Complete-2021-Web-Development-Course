@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle, #fff, #ccc);
+}
+
+body, #container .mid-section #instruction, #container .mid-section #choices .box, #container .bottom-section #startreset, #gameOver {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 50%;
+  padding: 20px 20px 10px;
+  background-color: #9dd2ea;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 4px #34a2d4;
+}
+
+#container .top-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". short-message score";
+  justify-content: space-between;
+}
+
+#container .top-section #score {
+  grid-area: score;
+  width: 100px;
+  background-color: #f1ff92;
+  color: #888e5f;
+  padding: 10px;
+  box-shadow: 0px 4px #95ac00;
+  justify-self: end;
+  text-align: center;
+}
+
+#container .top-section .short-message {
+  grid-area: short-message;
+  text-align: center;
+  color: white;
+  justify-self: center;
+}
+
+#container .top-section .short-message #correct {
+  background-color: #42e252;
+  padding: 10px;
+  display: none;
+}
+
+#container .top-section .short-message #wrong {
+  background-color: #de401a;
+  padding: 10px;
+  display: none;
+}
+
+#container .mid-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#container .mid-section #question {
+  width: 75%;
+  height: 150px;
+  margin: 0 auto 10px auto;
+  background-color: #9da0ea;
+  box-shadow: 0px 4px #5e63dd;
+  font-size: 100px;
+  text-align: center;
+  font-family: cursive, sans-serif;
+  color: black;
+}
+
+#container .mid-section #instruction {
+  width: 75%;
+  height: 50px;
+  margin: 0 auto 10px auto;
+  background-color: #b481d9;
+  box-shadow: 0px 4px #9146c7;
+  color: black;
+}
+
+#container .mid-section #choices {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: space-around;
+}
+
+#container .mid-section #choices .box {
+  width: 85px;
+  height: 85px;
+  background-color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.2s;
+}
+
+#container .mid-section #choices .box:hover {
+  background-color: #9c89f6;
+  color: #fff;
+  box-shadow: 0px 4px #6042f1;
+}
+
+#container .mid-section #choices .box:active {
+  box-shadow: none;
+  top: 4px;
+}
+
+#container .bottom-section {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". submit time";
+  justify-content: space-between;
+}
+
+#container .bottom-section #startreset {
+  grid-area: submit;
+  justify-self: center;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.2s;
+}
+
+#container .bottom-section #startreset:hover {
+  background-color: #9c89f6;
+  color: #fff;
+  box-shadow: 0px 4px #6042f1;
+}
+
+#container .bottom-section #startreset:active {
+  box-shadow: none;
+  top: 4px;
+}
+
+#container .bottom-section #timeremaining {
+  justify-self: end;
+  grid-area: time;
+  width: 175px;
+  padding: 10px;
+  background-color: rgba(181, 235, 36, 0.8);
+  border-radius: 3px;
+  display: none;
+}
+
+#gameOver {
+  height: 50%;
+  width: 50%;
+  background: linear-gradient(#f3ca6b, #f3706c);
+  color: #fff;
+  font-size: 2.5em;
+  flex-direction: column;
+  gap: 50px;
+  text-transform: uppercase;
+  z-index: 2;
+  position: absolute;
+  display: none;
+}

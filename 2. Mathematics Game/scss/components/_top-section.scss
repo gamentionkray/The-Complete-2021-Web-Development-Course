@@ -1,0 +1,35 @@
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". short-message score";
+  justify-content: space-between;
+
+  #score {
+    grid-area: score;
+    width: 100px;
+    background-color: $score-background;
+    color: $score-color;
+    padding: 10px;
+    @include set-box-shadow-below($score-background, 45%);
+    justify-self: end;
+    text-align: center;
+  }
+
+  .short-message {
+    grid-area: short-message;
+    text-align: center;
+    color: white;
+    justify-self: center;
+
+    #correct {
+      background-color: $msg-correct;
+      padding: 10px;
+      display: none;
+    }
+    #wrong {
+      background-color: $msg-wrong;
+      padding: 10px;
+      display: none;
+    }
+  }
+}
